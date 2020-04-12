@@ -1,6 +1,7 @@
 ### Run Elasticsearch & Kibana as docker containers
 ```
-git clone https://github.com/justmeandopensource/elk
+# git clone https://github.com/justmeandopensource/elk
+git clone https://github.com/doychind/elk
 cd elk/docker
 mv docker-compose-v7.1.1.yml docker-compose.yml
 sudo sysctl -w vm.max_map_count=262144
@@ -13,6 +14,16 @@ sudo apt-get install apt-transport-https
 echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
 sudo apt-get update && sudo apt-get install filebeat
 ```
+### Install Filebeat on client machine (MacOS Catalina)
+```
+brew install filebeat
+```
+Directory for configuring it:
+
+```
+/usr/local/etc/filebeat.yml
+```
+
 ### Configure Filebeat and enable system module
 Edit filebeat configuration and update kibana and elasticsearch url
 ```
